@@ -1,0 +1,21 @@
+body{
+  background: gray;
+}
+
+
+.App {
+  text-align: center;
+  margin-top: 300px;
+}
+.button{
+  background: black;
+  border-style: none;
+  padding: 13px 20px;
+  color: white;
+  font-size: 25px;
+}
+.value{
+  padding: 20px;
+  color: white;
+  font-size: 28px;
+}
