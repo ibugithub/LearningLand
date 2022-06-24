@@ -1561,7 +1561,7 @@
 // (28).... STRICT MODE  in React Js ....
 // ----------------------- START -------------------
 import React, {Component} from 'react';
-import StrictMode from './strictMode';
+import StrictMode from './strictMode.js';
 export default class Student extends Component {
     render(){
         return <StrictMode />
