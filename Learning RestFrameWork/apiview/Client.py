@@ -1,0 +1,129 @@
+import requests 
+import json 
+
+
+URL = "http://127.0.0.1:8000/"
+ 
+
+# def get_data(id = None):
+#     print(f"The id is {id}")
+#     data = {"id" : id} 
+#     jsonData = json.dumps(data) 
+#     r = requests.get(url = URL, data = jsonData) 
+#     data = r.json() 
+#     print(f"The Response data is {data}") 
+
+
+def create_data(name, roll, city):
+    data = { 
+        "name" : name,
+        "roll" : roll,
+        "city" : city
+    }
+    jsonData = json.dumps(data) 
+    r = requests.post(url = URL, data = jsonData) 
+    response = r.json() 
+    print(f"The response is {response}")
+    
+# def update_data(oldName, newName, city):
+
+#     # # I've just done little bit of exprimenting here don't use Nusrat name more than one time coz i'v used this name here as a primary key 'I should have use the id as the primary key'
+#     updated_data = {
+#         "oldName" : oldName,
+#         "newData": {
+#             "name" : newName,
+#             "city" : city
+#         }
+#     } 
+#     json_update_data = json.dumps(updated_data) 
+#     r = requests.put(url = URL, data = json_update_data) 
+#     update_data_response = r.json()
+#     print(f"Response: {update_data_response}")
+
+ 
+# def delete_data(name):
+#     data = {
+#         "name": name
+#     }
+#     json_name = json.dumps(data)
+#     r = requests.delete(url = URL, data = json_name)
+#     response = r.json()
+#     print(f"Response: {response}")
+
+# # ..... This method is for showing the data ........
+# get_data()
+
+# # ....... This section is for creating data .......
+# # # Plz don't use the same name in the database because i'm referenceing name as key here
+# create_name = "Nusrat" 
+# create_roll = 00000
+# create_city = "HateLand"
+# create_data(create_name,create_roll, create_city)
+
+# # # ......This section is for updating the data.......
+# oldName = "Nusrat"
+# newName = "Maya"
+# city = "HeartLand"
+# update_data(oldName, newName, city)
+
+
+# # # ...... This section is for deleting the data ........
+# delete_data('Rakib')
+
+
+
+
+headers = {'content-Type' : 'application/json'}
+
+def get_data(id = None):
+    data = {"id" : id}
+    json_data = json.dumps(data) 
+    r = requests.get(url = URL, data = json_data, headers = headers) 
+    print(r.json())
+
+
+
+def post_data():
+    data = { 
+        "name" : "ibrahim",
+        "roll" : 2342,
+        "city" : "dhaka"
+    }
+    json_data = json.dumps(data)  
+    r = requests.post(url = URL, headers = headers, data = json_data)
+    print(r.json())
+
+
+def update_data(oldName, newName, city):
+
+    # # I've just done little bit of exprimenting here don't use Nusrat name more than one time coz i'v used this name here as a primary key 'I should have use the id as the primary key'
+    updated_data = {
+        "oldName" : oldName,
+        "newData": {
+            "name" : newName,
+            "city" : city
+        }
+    } 
+    json_update_data = json.dumps(updated_data) 
+    r = requests.put(url = URL, headers = headers, data = json_update_data) 
+    update_data_response = r.json()
+    print(f"Response: {update_data_response}")
+
+
+
+
+
+def delete_data(name):
+    data = {
+        "name": name
+    }
+    json_name = json.dumps(data)
+    r = requests.delete(url = URL, headers = headers, data = json_name)
+    response = r.json()
+    print(f"Response: {response}")
+
+
+
+
+
+update_data('ibrahim', 'ibrahim1', 'khulna')

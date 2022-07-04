@@ -8,4 +8,5 @@ class BookSerializers(serializers.Serializer):
     published_date = serializers.DateTimeField() 
 
     def create(self, validate_data):
-        return Book.objects.create(validate_data)
+        return Book.objects.create(**validate_data) 
+    
