@@ -1,0 +1,34 @@
+{% extends 'core/base.html' %}
+{% load static %}
+{% block janina %}
+   
+{% endblock janina %}
+{% block content %}
+<div>
+  <div class=" image mt-5 text-center">
+    <img src="{% static 'core/imagesfiles/sd.jpg' %}" class="img-thumbnail" width="250px " height="150px">
+  </div>
+  <div class=" writing mx-5 text-justify
+   my-5 px-5">
+    <h1 class="text-white google  "> Hello,</h1>
+
+    <div class="paragraph text-white" style="line-height:2rem;">
+      <p style="text-indent:100px;"> I am <b class="text-warning">Ibrahim Hossain</b> Lorem ipsum dolor sit amet,
+        consectetur adipisicing elit.
+        Pariatur quas repellat necessitatibus, laboriosam voluptate laborum atque aperiam cumque, ullam voluptates rem.
+        Corrupti, consequatur ipsa. Ratione animi beatae consectetur incidunt tempora.</p>
+      <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Cumque in magni perferendis excepturi, sed earum
+        voluptatibus harum modi nemo quam beatae tenetur blanditiis aperiam quas libero similique. Ducimus, at iusto.
+      </p>
+    </div>
+  </div>
+  <div class="button text-center">
+    <a href="" class="btn btn-outline-warning my-3 mr-5" >Hire me</a>
+    <a href="" class="btn btn-outline-info my-3">Contact</a>
+  </div>
+
+  <h2>I'm getting angry</h2>
+</div>
+<a href="{% url 'base' %}">{{key}}</a>
+{{applying}}
+{% endblock content %}

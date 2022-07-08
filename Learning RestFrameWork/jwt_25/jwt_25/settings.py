@@ -11,7 +11,9 @@ https://docs.djangoproject.com/en/4.0/ref/settings/
 """
 
 from pathlib import Path
-
+from datetime import timedelta
+from pickle import TRUE
+from tkinter.font import ITALIC
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
 
@@ -37,6 +39,8 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'rest_framework',
+    'api'
 ]
 
 MIDDLEWARE = [
@@ -121,3 +125,13 @@ STATIC_URL = 'static/'
 # https://docs.djangoproject.com/en/4.0/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+
+# # FOR OVERRIDING THE DEFAULT SIMPLE JWT SETTING >>>> 
+SIMPLE_JWT = {
+    # BY DEFAULT IT'S 5 MINUTE
+    "ACCESS_TOKEN_LIFETIME": timedelta(minutes=10),
+     
+    #  BY DEFAULT IT'S FALSE
+    'ROTATE_REFRESH_TOKEN' : TRUE
+}
