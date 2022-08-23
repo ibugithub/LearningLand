@@ -1,8 +1,24 @@
+import  java.awt.Rectangle;
+
 public class Main {
-    public static void main(String[] args) {
-        System.out.println("Hello \nworld!");
-        System.out.println("Hey now i'm at my ibusLand world");
-        System.out.println(3 + 4 + 5 + 6);
-        System.out.println("3 + 4 + 5 + 6 ");
+    public class Car {
+        private double milesDriven;
+        private double gasInTank;
+
+        public void drive(double distance)
+        {
+            milesDriven = milesDriven + distance;
+        }
+        public void addGas(double amount)
+        {
+            gasInTank = gasInTank + amount;
+        }
+
     }
+
+    public static void main(String[] args) {
+
+
+    }
+
 }
