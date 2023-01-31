@@ -1,0 +1,42 @@
+*Data will be stored in memory according to the data type.
+*Data overflow will be dependent by the size of the data type.
+Integer Data type => 4 byte
+float Data type => 8 byte
+Double data type => 8 byte 
+boolean data type => 1 byte 
+char data type => 1 byte 
+
+* By deafult integer number is signed number.
+
+
+Formula to create number from consective digit...
+
+    4, 7, 1 ---> 471
+    direction <== 
+    (10^x * digit) + prevSum  
+
+    4, 7, 1 ---> 471
+    direction ==> 
+    (10 * prevsum) + digit 
+
+
+
+    4, 7, 1 ---> 174
+    direction ==> 
+    (10^x * digit) + prevsum 
+
+    4, 7, 1 ---> 174 
+    direction <== 
+    (10 * prevsum) + digit
+
+
+
+
+
+
+// Reverse order ......
+
+
+
+
+

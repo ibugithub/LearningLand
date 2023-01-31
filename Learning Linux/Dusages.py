@@ -16,4 +16,4 @@ with open(fileName, 'w') as peoplefile:
     hobby = input("write your hobby here \n") 
     row = [[name, age, city, hobby],]
     csvWriter.writerows(row)
-    
+    csvWriter.
