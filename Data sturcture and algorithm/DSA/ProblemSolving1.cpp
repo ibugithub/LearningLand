@@ -72,40 +72,54 @@ int main()
     // cout <<ans; 
 
 
+
     // Is it power of 2............
-    int n;
-    cin >> n;
-    bool is = 1;
-    if (n < 1){
-        is = 0;
-    }
-    while(n > 1)
+    // int n;
+    // cin >> n;
+    // bool is = 1;
+    // if (n < 1){
+    //     is = 0;
+    // }
+    // while(n > 1)
+    // {
+    //     if (n % 2 == 0){
+    //         n/=2;
+    //     }
+    //     else{   
+    //         is = 0;
+    //         break;
+    //     }
+    // }
+    // if (is == 1){
+    //     cout << "true";
+    // }
+    // else if (is == 0)
+    // {
+    //     cout << "false";
+    // }
+    
+// Another way of d o i ng it .........
+
+int main () {
+    int n = 16;
+    int sum = 0;
+    while(n != 0)
     {
-        if (n % 2 == 0){
-            n/=2;
-            cout << "i am in if of while block";
+        if (n&1 == 1)
+        {
+            sum += 1;
         }
-        else{
-            cout << "im in the else of while block";
-            is = 0;
-            break;
-
-        }
+        n>>=1;
     }
-    
-    if (is == 1){
-        cout << "true";
-    }
-    else if (is == 0)
+    if (sum == 1)
     {
-        cout << "false";
+        cout << "power of 2";
     }
-    
-
-    
-
-
-
+    else{
+        cout << "not power of 2";
+    }
+    cout << sum;
+}
 
 
 }

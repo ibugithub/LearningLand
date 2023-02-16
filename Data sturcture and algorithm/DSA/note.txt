@@ -20,7 +20,7 @@ Formula to create number from consective digit...
     (10 * prevsum) + digit 
 
 
-
+    // Reverse order ......
     4, 7, 1 ---> 174
     direction ==> 
     (10^x * digit) + prevsum 
@@ -32,9 +32,65 @@ Formula to create number from consective digit...
 
 
 
+=> n = 101101;
+= > n & 1 = 1 
+you can get the last element from a binary number by anding it to 1; then by doing 
+n = n >> 1; 
+you can shift it right 1 on the right.
+n = 010110
+n & 1 = 0;
 
 
-// Reverse order ......
+
+if you and a number with 1 
+if the result is 1 then the number's decimal number form will be an odd.
+if the result is 0 then the number's decimal number form  will be even.
+
+7 -> 0111 & 1 = 0001 = 1 -> 7 is an odd  
+8 -> 0100 & 1 = 0000 = 0 -> 8 is an even
+
+
+
+
+
+Xor operation
+a ^ a = 0;
+0 ^ a = a;
+
+xor operation is really mind blowing 
+suppose you want to add all the element in n.
+n = {3 ^ 8 ^ 3 ^ 6 ^ 2 ^ 8 ^ 6}
+=> 3 ^ 8 = 3 + 8 = 11
+=> 11 ^ 3 = 11 -3 = 8 [here 3 minused because 3 was added before. 3 ^ 3 = 0]
+=> 8 ^ 6 = 8 + 6 = 14
+=> 14 ^ 2 = 14 + 2 =16
+=> 16 ^ 8 = 16 - 8 = 8 [here 8 minused because 8 was added before. 8 ^ 8 = 0]
+=> 8 ^ 6 = 8 - 6 = 2 [here 6 minused because 6 was added before. 6 ^ 6 = 0]
+
+
+
+=>> a * 2 and -a * 2
+In the upper example a * 2 could make the integer data set over flow. I mean a * 2 cold be a * 2 > INT_MAX. 
+and -a * 2 could be -a * 2 < INT_MIN.
+So to solve it like below.
+===> if ( (a / 2) <= (INT_MAX/2) ) 
+      { a * 2}
+
+===> if ( (-a / 2) >= (INT_MIN/2) ) 
+      { -a * 2}
+    
+
+
+=>> (a + b) / 2 
+In the upper example a + b could make the integer data set over flow. I mean a + b cold be a + b > INT_MAX. 
+So to solve it try like below.
+==> x = (a + b) /2
+==> x - a  = ((a + b) / 2) - a
+==> x - a  = (a + b - 2a) / 2
+==> x -a   = (b - a) / 2
+==> x      = a + ( b - a ) / 2
+
+
 
 
 
