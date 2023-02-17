@@ -2,13 +2,21 @@ import os
 import shutil 
 
 baseDir = os.getcwd()
-fileName = 'unMatchedWords.txt'
+fileName = 'story2.txt'
+
+
 with os.scandir(baseDir) as dirs:
     for dir in dirs:
         if os.path.isdir(dir.name):
             parentdir = baseDir + "/" + dir.name 
-        file = parentdir + "/" + fileName 
-        if not os.path.exists(file) :
-            filePath = os.path.join(parentdir, fileName) 
-            with open(filePath, 'w') as nothing:
-                pass
+        with os.scandir(parentdir) as parentdirs:
+            for pdir in parentdirs:
+                if os.path.isdir(pdir):
+                    filePath = os.path.join(parentdir + "/" + pdir.name, fileName)
+                    # file2path = parentdir + '/'+pdir.name+fname
+                    # if os.path.exists(file2path):
+                    #     os.remove(file2path)
+                    if not os.path.exists(filePath):
+                        with open(filePath, 'w') as nothing: 
+                            pass
+                        
