@@ -10,20 +10,26 @@ void printArray(vector<int> &arr)
     }
 }
 
+
+
+// int rotate(vector<int> & nums, int start, int end) 
+// {
+//     while(start <= end) 
+//     {
+//         swap(nums[start], nums[end]);
+//         start++;
+//         end--;
+//     }
+// }
 // int main()
 // {
-//     vector<int> nums = {1, 2, 3, 4, 5, 6, 7};
-//     int k = 3;
-//     for (int i = 1; i <= k; i++)
-//     {
-//         int temp = nums[nums.size() - 1];
-//         for (int i = nums.size() - 1; i > 0; i--)
-//         {
-//             nums[i] = nums[i - 1];
-//         }
-//         nums[0] = temp;
-//     }
-
+//     vector<int> nums  = {11, 12, 13, 14, 15};
+//     int start = 0;
+//     int end =  nums.size() - 1; 
+//     int k = 1;
+//     rotate(nums, start, end);
+//     rotate(nums, start, k - 1);      
+//     rotate(nums, k, end);
 //     printArray(nums);
 // } 
 
@@ -31,44 +37,16 @@ void printArray(vector<int> &arr)
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-int main()
+int main() 
 {
-    vector<int> nums = {1, 2, 3, 4, 5, 6, 7};
-    int k = 2;
-    int start = 0;
-    int end = nums.size() - 1; 
-    while(start != k && end != k)
-    {
-        swap(nums[start], nums[end]);
-        start++;
-        end--;
+    vector<int> nums = {11, 12, 13, 14, 15, 16, 18, 19, 20, 33};
+    vector<int> temp(nums.size());
+    int k = 9;
+    for (int i = 0; i < nums.size(); i++)
+    { 
+        int index = (i + k) % (nums.size());
+        temp[index] = nums[i];
     }
-    cout << "the start is " <<start <<endl;
-    cout <<"the end is " <<end <<endl;
-    if (start == k)
-    { k = end;} 
-    while(start <= end)
-    {
-        swap(nums[start], nums[end]);
-        start++;
-        end--;
-    }
-    cout << "the start is after " <<start <<endl;
-    cout <<"the end is after" <<end <<endl;
-
+    nums = temp;
     printArray(nums);
-} 
+}

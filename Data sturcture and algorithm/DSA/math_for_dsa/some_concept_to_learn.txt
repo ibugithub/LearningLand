@@ -1,0 +1,4 @@
+pigeonhole principle
+catalon number
+inclusive - exclusive principle
+factorial of n.
